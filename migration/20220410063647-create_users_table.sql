@@ -14,4 +14,4 @@ CREATE TABLE IF NOT EXISTS `users` (
 )ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- +migrate Down
-DROP TABLE IF EXISTS `users`;
+-- DROP TABLE IF EXISTS `users`;

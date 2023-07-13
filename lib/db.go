@@ -5,6 +5,7 @@ import (
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
+	"gorm.io/gorm/schema"
 )
 
 // Database modal
@@ -21,10 +22,13 @@ func NewDatabase(env Env, logger Logger) Database {
 	port := env.DBPort
 	dbname := env.DBName
 
-	url := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local", username, password, host, port, dbname)
+	url := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", username, password, host, port, dbname)
 
 	db, err := gorm.Open(mysql.Open(url), &gorm.Config{
 		Logger: logger.GetGormLogger(),
+		NamingStrategy: schema.NamingStrategy{
+			SingularTable: true,
+		},
 	})
 
 	if err != nil {
