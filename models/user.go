@@ -19,5 +19,5 @@ type User struct {
 
 // TableName gives table name of model
 func (u User) TableName() string {
-	return "users"
+	return "user"
 }
