@@ -7,4 +7,5 @@ var Module = fx.Options(
 	fx.Provide(NewUserController),
 	fx.Provide(NewJWTAuthController),
 	fx.Provide(NewAuthorController),
+	fx.Provide(NewComicController),
 )

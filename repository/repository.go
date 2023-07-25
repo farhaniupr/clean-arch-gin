@@ -5,5 +5,6 @@ import "go.uber.org/fx"
 // Module exports dependency
 var Module = fx.Options(
 	fx.Provide(NewUserRepository),
-	fx.Provide(AuthorConnectRepository),
+	fx.Provide(NewAuthorRepository),
+	fx.Provide(NewComicRepository),
 )
