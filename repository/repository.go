@@ -7,4 +7,5 @@ var Module = fx.Options(
 	fx.Provide(NewUserRepository),
 	fx.Provide(NewAuthorRepository),
 	fx.Provide(NewComicRepository),
+	fx.Provide(NewMemberRepository),
 )
